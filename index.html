@@ -13,6 +13,8 @@
 <meta property="og:url" content="https://biallavineyards.com/">
 <meta property="og:image" content="https://biallavineyards.com/assets/img/label-napa-valley-cabernet.jpg">
 <meta name="theme-color" content="#0D0D0D">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self' https://formsubmit.co; form-action https://formsubmit.co; base-uri 'self'; object-src 'none';">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/img/favicon-180.png">
 <link rel="stylesheet" href="assets/css/fonts.css">
@@ -56,7 +58,6 @@
       <p class="wine__vintage">2024</p>
       <h3 class="wine__name">Cabernet Sauvignon</h3>
       <p class="wine__ava">Napa Valley</p>
-      <p class="wine__meta">14.9% Alc./Vol.</p>
       <div class="wine__divider"></div>
     </article>
     <article class="wine reveal">
@@ -92,7 +93,6 @@
       <h2 class="title" id="contact-title">Questions?</h2>
       <p class="contact__lede">Send us a message.</p>
       <ul class="contact__direct">
-        <li><span class="label">Phone</span><a href="tel:+17076815669">(707) 681-5669</a></li>
         <li><span class="label">Email</span><a href="mailto:support@biallavineyards.com">support@biallavineyards.com</a></li>
       </ul>
     </div>
@@ -117,7 +117,7 @@
         </div>
         <div class="sr-only" aria-hidden="true"><label>Leave this field blank<input name="_honey" type="text" tabindex="-1" autocomplete="off"></label></div>
         <div class="form__actions"><button class="btn" type="submit">Send Message </button></div>
-        <p class="form__error" role="alert">Sorry, your message could not be sent just now. Please call us at <a href="tel:+17076815669">(707) 681-5669</a> or email <a href="mailto:support@biallavineyards.com">support@biallavineyards.com</a>.</p>
+        <p class="form__error" role="alert">Sorry, your message could not be sent just now. Please email <a href="mailto:support@biallavineyards.com">support@biallavineyards.com</a>.</p>
       </div>
       <div class="form__success" role="status" aria-live="polite">
         <h3>Thank you</h3>
@@ -135,7 +135,7 @@
     <li><a href="terms.html">Terms &amp; Conditions</a></li>
     <li><a href="privacy.html">Privacy Policy</a></li>
   </ul>
-  <p class="footer__contact"><a href="tel:+17076815669">(707) 681-5669</a><span class="sep" aria-hidden="true">&middot;</span><a href="mailto:support@biallavineyards.com">support@biallavineyards.com</a></p>
+  <p class="footer__contact"><a href="mailto:support@biallavineyards.com">support@biallavineyards.com</a></p>
   <p>&copy; 2026 Bialla Vineyards. All rights reserved.</p>
   <p class="footer__age">Intended for adults 21+. Please enjoy responsibly.</p>
 </footer>

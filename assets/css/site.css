@@ -112,6 +112,7 @@ a{color:inherit}
 .legal h2{font-family:var(--serif);font-weight:600;font-size:22px;letter-spacing:.06em;color:var(--red);margin:40px 0 8px}
 .legal p,.legal li{font-size:16.5px;color:#2b2722}
 .legal ul{padding-left:20px}
+.notfound__text{margin-top:26px}
 .back-link{display:inline-flex;align-items:center;gap:10px;margin-top:50px;font-family:var(--serif);font-weight:600;font-size:13px;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;color:var(--black);border-bottom:1px solid var(--gold);padding-bottom:4px}
 
 /* ---------- reveal ---------- */

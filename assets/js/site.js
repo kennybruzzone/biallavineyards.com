@@ -1,4 +1,4 @@
-// Bialla Vineyards: reveal-on-scroll + contact form (delivered via FormSubmit AJAX).
+// Bialla Vineyards: reveal-on-scroll + contact form (delivered via Web3Forms AJAX).
 (function(){
   document.documentElement.classList.add('js');
   var els=document.querySelectorAll('.reveal');
@@ -9,7 +9,7 @@
 
   var form=document.getElementById('contact-form');
   if(!form) return;
-  var ENDPOINT='https://formsubmit.co/ajax/support@biallavineyards.com';
+  var ENDPOINT='https://api.web3forms.com/submit';
   var emailRe=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   var btn=form.querySelector('button[type="submit"]'), btnLabel=btn.firstChild.nodeValue;
   function check(field){
@@ -38,19 +38,19 @@
     var fields=[].slice.call(form.querySelectorAll('.field')), ok=true, first=null;
     fields.forEach(function(f){ if(!check(f)){ ok=false; if(!first) first=f; } });
     if(!ok){ first.querySelector('input,textarea').focus(); return; }
-    var honey=form.querySelector('[name="_honey"]');
-    if(honey && honey.value){ done(); return; } // likely a bot: pretend success, send nothing
+    var honey=form.querySelector('[name="botcheck"]');
+    if(honey && honey.checked){ done(); return; } // likely a bot: pretend success, send nothing
     btn.disabled=true; btn.firstChild.nodeValue='Sending\u2026 ';
     form.classList.remove('has-error');
     var data={
       name:form.elements.name.value.trim(),
       email:form.elements.email.value.trim(),
       message:form.elements.message.value.trim(),
-      _replyto:form.elements.email.value.trim(),
-      _subject:'New inquiry from biallavineyards.com',
-      _template:'table',
-      _captcha:'false',
-      _honey:''
+      access_key:form.elements.access_key.value,
+      subject:form.elements.subject.value,
+      from_name:form.elements.from_name.value,
+      replyto:form.elements.email.value.trim(),
+      botcheck:false
     };
     fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
       .then(function(r){ return r.json().catch(function(){return {};}).then(function(j){ return {ok:r.ok,j:j}; }); })

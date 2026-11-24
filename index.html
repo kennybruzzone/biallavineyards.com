@@ -14,7 +14,7 @@
 <meta property="og:image" content="https://biallavineyards.com/assets/img/label-napa-valley-cabernet.jpg">
 <meta name="theme-color" content="#0D0D0D">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self' https://formsubmit.co; form-action https://formsubmit.co; base-uri 'self'; object-src 'none';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self' https://api.web3forms.com; form-action https://api.web3forms.com; base-uri 'self'; object-src 'none';">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/img/favicon-180.png">
 <link rel="stylesheet" href="assets/css/fonts.css">
@@ -96,7 +96,10 @@
         <li><span class="label">Email</span><a href="mailto:support@biallavineyards.com">support@biallavineyards.com</a></li>
       </ul>
     </div>
-    <form class="form reveal" id="contact-form" action="https://formsubmit.co/support@biallavineyards.com" method="POST" novalidate>
+    <form class="form reveal" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+      <input type="hidden" name="access_key" value="77472aa3-9f71-471a-81b6-66714dd9182c">
+      <input type="hidden" name="subject" value="New inquiry from biallavineyards.com">
+      <input type="hidden" name="from_name" value="Bialla Vineyards Website">
       <div class="form__fields">
         <div class="form__row">
           <div class="field">
@@ -115,7 +118,7 @@
           <textarea id="f-message" name="message" rows="5" required placeholder="How can we help?"></textarea>
           <div class="field__error">Please enter a message.</div>
         </div>
-        <div class="sr-only" aria-hidden="true"><label>Leave this field blank<input name="_honey" type="text" tabindex="-1" autocomplete="off"></label></div>
+        <div class="sr-only" aria-hidden="true"><label>Leave this field blank<input name="botcheck" type="checkbox" tabindex="-1" autocomplete="off" style="display:none"></label></div>
         <div class="form__actions"><button class="btn" type="submit">Send Message </button></div>
         <p class="form__error" role="alert">Sorry, your message could not be sent just now. Please email <a href="mailto:support@biallavineyards.com">support@biallavineyards.com</a>.</p>
       </div>
